@@ -143,7 +143,7 @@ def parse_file(filepath, add_true_line, filename_prefix, outputname=None, change
         
         # Check for reduced indent level
         for i in list(line):
-            if i == "}":
+            if i == "end":
                 indentation_level -= 1
 
         # Add indentation
@@ -152,7 +152,7 @@ def parse_file(filepath, add_true_line, filename_prefix, outputname=None, change
 
         # Check for increased indentation
         for i in list(line):
-            if i == "{":
+            if i == "then":
                 indentation_level += 1
 
         # Replace { with : and remove }
